@@ -1,0 +1,6 @@
+# Secrets and private content
+.env
+.wrangler/
+.dev.vars
+node_modules/
+.DS_Store

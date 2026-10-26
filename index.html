@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10090d">
+  <meta name="description" content="A private birthday surprise.">
+  <title>A little something for you</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <main id="app" class="shell">
+    <section id="waiting-view" class="view waiting-view" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow">A small secret, kept with care</p>
+        <h1 id="page-title">Some moments are worth waiting for.</h1>
+        <p class="lede">There is something beautiful waiting on the other side of midnight.</p>
+        <div class="countdown" aria-label="Countdown to the birthday surprise">
+          <div><strong id="days">00</strong><span>days</span></div>
+          <div><strong id="hours">00</strong><span>hours</span></div>
+          <div><strong id="minutes">00</strong><span>minutes</span></div>
+          <div><strong id="seconds">00</strong><span>seconds</span></div>
+        </div>
+        <p id="countdown-status" class="status" aria-live="polite">Counting down to October 28, 2026 at 12:01 AM IST.</p>
+        <form id="unlock-form" class="unlock-form" novalidate>
+          <label for="password">When the time comes, enter your secret word</label>
+          <div class="input-row">
+            <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="Your secret word" aria-describedby="form-message">
+            <button type="submit"><span>Unlock</span><span aria-hidden="true">↗</span></button>
+          </div>
+          <p id="form-message" class="form-message" role="alert"></p>
+        </form>
+      </div>
+      <div class="polaroid-stage" aria-label="Three photo placeholders. Replace the SVG files in assets/photos with your own images.">
+        <figure class="polaroid polaroid-one"><img src="assets/photos/photo-1.svg" alt="Photo placeholder one"><figcaption>your favourite moment</figcaption></figure>
+        <figure class="polaroid polaroid-two"><img src="assets/photos/photo-2.svg" alt="Photo placeholder two"><figcaption>something worth remembering</figcaption></figure>
+        <figure class="polaroid polaroid-three"><img src="assets/photos/photo-3.svg" alt="Photo placeholder three"><figcaption>more memories to come</figcaption></figure>
+        <p class="photo-note">Replace the three files in <code>assets/photos/</code> with your own JPG, PNG, or WebP images.</p>
+      </div>
+    </section>
+
+    <section id="envelope-view" class="view envelope-view is-hidden" aria-labelledby="envelope-title" aria-hidden="true">
+      <p class="eyebrow">The waiting is over</p>
+      <h2 id="envelope-title">A letter, sealed just for you.</h2>
+      <p class="envelope-hint">Take a breath, then open it when you are ready.</p>
+      <button id="open-letter" class="envelope-button" type="button" aria-label="Open the birthday letter">
+        <span class="envelope" aria-hidden="true"><span class="letter-teaser">For you</span><span class="flap"></span><span class="seal">✦</span></span>
+        <span class="button-label">Open the letter</span>
+      </button>
+    </section>
+
+    <article id="letter-view" class="letter-view is-hidden" aria-hidden="true">
+      <div class="letter-paper">
+        <p class="eyebrow">A few words from the heart</p>
+        <h2 id="letter-heading">A birthday letter for you</h2>
+        <p id="letter-recipient" class="recipient"></p>
+        <div id="letter-body" class="letter-body"></div>
+        <div class="divider">✦</div>
+        <p id="letter-signoff" class="signoff"></p>
+      </div>
+    </article>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>
